@@ -1,6 +1,6 @@
 import React from "react";
 import { navigate } from "gatsby-link";
-import Layout from '../../components/Layout'
+import Layout from "./Layout";
 
 function encode(data) {
   return Object.keys(data)
@@ -8,7 +8,7 @@ function encode(data) {
     .join("&");
 }
 
-export default class Index extends React.Component {
+export default class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isValidated: false };
@@ -35,11 +35,7 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-        <h1>Contact</h1>
+      <>
         <form
           name="contact"
           method="post"
@@ -57,31 +53,56 @@ export default class Index extends React.Component {
             </label>
           </div>
           <div className="field">
-            <label className="label" htmlFor={"name"} >Your name</label>
+            <label className="label" htmlFor={"name"}>
+              Your name
+            </label>
             <div className="control">
-              <input className="input" type={"text"} name={"name"} onChange={this.handleChange} id={"name"} required={true} />
+              <input
+                className="input"
+                type={"text"}
+                name={"name"}
+                onChange={this.handleChange}
+                id={"name"}
+                required={true}
+              />
             </div>
           </div>
           <div className="field">
-            <label className="label" htmlFor={"email"}>Email</label>
-              <div className="control">
-                <input className="input" type={"email"} name={"email"} onChange={this.handleChange} id={"email"} required={true} />
-              </div>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor={"message"}>Message</label>
+            <label className="label" htmlFor={"email"}>
+              Email
+            </label>
             <div className="control">
-              <textarea className="textarea" name={"message"} onChange={this.handleChange} id={"email"} required={true} />
+              <input
+                className="input"
+                type={"email"}
+                name={"email"}
+                onChange={this.handleChange}
+                id={"email"}
+                required={true}
+              />
             </div>
           </div>
           <div className="field">
-            <button className="button is-link" type="submit">Send</button>
+            <label className="label" htmlFor={"message"}>
+              Message
+            </label>
+            <div className="control">
+              <textarea
+                className="textarea"
+                name={"message"}
+                onChange={this.handleChange}
+                id={"email"}
+                required={true}
+              />
+            </div>
+          </div>
+          <div className="field">
+            <button className="button is-link" type="submit">
+              Send
+            </button>
           </div>
         </form>
-        </div>
-        </div>
-        </section>
-      </Layout>
+      </>
     );
   }
 }
