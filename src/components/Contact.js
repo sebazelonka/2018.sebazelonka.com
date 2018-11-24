@@ -1,12 +1,12 @@
 import React from "react";
 import { navigate } from "gatsby-link";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, Label, Input } from "reactstrap";
 import styled from "styled-components";
 
 const FormWrapper = styled(Form)`
   input:focus,
   textarea:focus {
-    box-shadow: none
+    box-shadow: none;
     border-color: #1cc;
   }
   textarea {
@@ -124,9 +124,9 @@ export default class Contact extends React.Component {
             </div>
           </div>
           <div className="field">
-            <button className="main-button" type="submit">
+            <Button className="main-button" type="submit">
               Send
-            </button>
+            </Button>
           </div>
         </FormWrapper>
       </>
