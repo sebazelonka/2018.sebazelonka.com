@@ -5,9 +5,7 @@ import Layout from "../components/Layout";
 
 import styled from "styled-components";
 
-const Articles = styled.section`
-  padding: 6rem 0;
-`;
+const Articles = styled.section``;
 
 const MainButton = styled(Link)`
   font-family: "Exo 2", sans-serif;

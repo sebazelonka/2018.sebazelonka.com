@@ -1,9 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
+import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
 
 import Navbar from "../components/Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Footer";
 
 const Wrapper = styled.div`
@@ -21,6 +21,7 @@ const Wrapper = styled.div`
 const MainContent = styled.div`
   padding-top: 10rem;
   padding-bottom: 5rem;
+  min-height: calc(100vh - 7rem);
 `;
 
 const TemplateWrapper = ({ children }) => (
