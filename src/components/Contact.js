@@ -1,6 +1,33 @@
 import React from "react";
 import { navigate } from "gatsby-link";
-import Layout from "./Layout";
+import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import styled from "styled-components";
+
+const FormWrapper = styled(Form)`
+  input:focus,
+  textarea:focus {
+    box-shadow: none
+    border-color: #1cc;
+  }
+  textarea {
+    box-shadow: none;
+  }
+  .label {
+    margin: 1.25rem 0 0.5rem;
+  }
+  .main-button {
+    font-family: "Exo 2", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 15px;
+    line-height: 1;
+    border: none;
+    margin-top: 3rem;
+  }
+`;
 
 function encode(data) {
   return Object.keys(data)
@@ -36,7 +63,7 @@ export default class Contact extends React.Component {
   render() {
     return (
       <>
-        <form
+        <FormWrapper
           name="contact"
           method="post"
           action="/contact/thanks/"
@@ -45,19 +72,19 @@ export default class Contact extends React.Component {
           onSubmit={this.handleSubmit}
         >
           {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-          <input type="hidden" name="form-name" value="contact" />
+          <Input type="hidden" name="form-name" value="contact" />
           <div hidden>
-            <label>
+            <Label>
               Don’t fill this out:{" "}
-              <input name="bot-field" onChange={this.handleChange} />
-            </label>
+              <Input name="bot-field" onChange={this.handleChange} />
+            </Label>
           </div>
           <div className="field">
-            <label className="label" htmlFor={"name"}>
+            <Label className="label" htmlFor={"name"}>
               Your name
-            </label>
+            </Label>
             <div className="control">
-              <input
+              <Input
                 className="input"
                 type={"text"}
                 name={"name"}
@@ -68,11 +95,11 @@ export default class Contact extends React.Component {
             </div>
           </div>
           <div className="field">
-            <label className="label" htmlFor={"email"}>
+            <Label className="label" htmlFor={"email"}>
               Email
-            </label>
+            </Label>
             <div className="control">
-              <input
+              <Input
                 className="input"
                 type={"email"}
                 name={"email"}
@@ -83,12 +110,12 @@ export default class Contact extends React.Component {
             </div>
           </div>
           <div className="field">
-            <label className="label" htmlFor={"message"}>
+            <Label className="label" htmlFor={"message"}>
               Message
-            </label>
+            </Label>
             <div className="control">
-              <textarea
-                className="textarea"
+              <Input
+                type="textarea"
                 name={"message"}
                 onChange={this.handleChange}
                 id={"email"}
@@ -97,11 +124,11 @@ export default class Contact extends React.Component {
             </div>
           </div>
           <div className="field">
-            <button className="button is-link" type="submit">
+            <button className="main-button" type="submit">
               Send
             </button>
           </div>
-        </form>
+        </FormWrapper>
       </>
     );
   }

@@ -1,28 +1,76 @@
 import React from "react";
-import { Link } from "gatsby";
+import styled from "styled-components";
 
-const Navbar = () => (
-  <nav className="navbar is-transparent">
-    <div className="container">
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/">
-          Home
-        </Link>
-        <Link className="navbar-item" to="/about">
-          About
-        </Link>
-        <Link className="navbar-item" to="/products">
-          Products
-        </Link>
-        <Link className="navbar-item" to="/contact">
-          Contact
-        </Link>
-        <Link className="navbar-item" to="/contact/examples">
-          Form Examples
-        </Link>
-      </div>
-    </div>
-  </nav>
-);
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container
+} from "reactstrap";
 
-export default Navbar;
+const NavigationWrapper = styled(Navbar)`
+  background-color: #000 !important;
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    height: 5px;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
+  }
+  a {
+    font-family: "exo 2", sans-serif;
+    color: #fff;
+    font-weight: 700;
+  }
+  .navbar-brand {
+    background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
+    color: transparent;
+    background-clip: text;
+  }
+`;
+
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
+    return (
+      <NavigationWrapper expand="md">
+        <Container>
+          <NavbarBrand href="/">Sebastian Zelonka</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/">Components</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/">GitHub</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Container>
+      </NavigationWrapper>
+    );
+  }
+}

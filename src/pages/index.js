@@ -18,14 +18,21 @@ const Top = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    height: 5px;
+    width: 100%;
+    background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
+  }
   h1 {
     font-family: "Exo 2", sans-serif;
     font-size: 5rem;
     font-weight: 900;
-    background-image: linear-gradient(30deg, #B4EC51, #00C6D1);
-    color:transparent;
+    background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
+    color: transparent;
     background-clip: text;
-}
   }
   h2 {
     font-family: "merriweather", serif;
@@ -102,27 +109,6 @@ const ContactSection = styled.section`
   padding: 6rem 0;
 `;
 
-const FooterSection = styled.section`
-  background-color: #000;
-  display: flex;
-  padding: 2rem;
-  justify-content: center;
-  a {
-    margin: 0 2rem;
-    opacity: 0.75;
-    transition: 0.25s;
-    &:hover {
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-  [class^="icon-"] {
-    font-size: 3rem !important;
-    background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
-    color: transparent;
-    background-clip: text;
-  }
-`;
 const MainButton = styled(Link)`
   font-family: "Exo 2", sans-serif;
   font-size: 1rem;
@@ -283,17 +269,6 @@ export default class IndexPage extends React.Component {
             </Row>
           </Container>
         </ContactSection>
-        <FooterSection>
-          <Link>
-            <SimpleLineIcon name="social-linkedin" />
-          </Link>
-          <Link>
-            <SimpleLineIcon name="social-github" />
-          </Link>
-          <Link>
-            <SimpleLineIcon name="social-twitter" />
-          </Link>
-        </FooterSection>
       </Layout>
     );
   }
@@ -309,10 +284,7 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-    ) {
+    allMarkdownRemark(limit: 1) {
       edges {
         node {
           excerpt(pruneLength: 400)
