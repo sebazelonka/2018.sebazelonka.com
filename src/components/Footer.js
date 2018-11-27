@@ -22,6 +22,7 @@ const FooterSection = styled.section`
     background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
     color: transparent;
     background-clip: text;
+    -webkit-background-clip: text;
   }
 `;
 
@@ -29,13 +30,13 @@ export default class Footer extends React.Component {
   render() {
     return (
       <FooterSection>
-        <Link>
+        <Link to="/">
           <SimpleLineIcon name="social-linkedin" />
         </Link>
-        <Link>
+        <Link to="/">
           <SimpleLineIcon name="social-github" />
         </Link>
-        <Link>
+        <Link to="/">
           <SimpleLineIcon name="social-twitter" />
         </Link>
       </FooterSection>

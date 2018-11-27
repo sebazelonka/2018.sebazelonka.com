@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 const LandingTemplateWrapper = ({ children }) => (
   <Wrapper>
     <Helmet title="Home | Gatsby + Netlify CMS" />
-    <div>{children}</div>
+    <>{children}</>
     <Footer />
   </Wrapper>
 );

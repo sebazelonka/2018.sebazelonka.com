@@ -4,11 +4,11 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/LayoutLanding";
 import { Container, Row, Col } from "reactstrap";
 import SimpleLineIcon from "react-simple-line-icons";
-
 import styled from "styled-components";
 
 import seba from "../img/seba.png";
 import Contact from "../components/Contact";
+import Navigation from "../components/Navbar";
 
 const Top = styled.section`
   background-color: #000;
@@ -18,14 +18,6 @@ const Top = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  &::after {
-    position: absolute;
-    content: "";
-    bottom: -5px;
-    height: 5px;
-    width: 100%;
-    background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
-  }
   h1 {
     font-family: "Exo 2", sans-serif;
     font-size: 5rem;
@@ -33,32 +25,26 @@ const Top = styled.section`
     background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
     color: transparent;
     background-clip: text;
+    -webkit-background-clip: text;
   }
   h2 {
     font-family: "merriweather", serif;
     font-size: 2rem;
   }
-`;
-
-const NavHome = styled.nav`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
-  font-family: "Exo 2", sans-serif;
-  a {
-    color: #fff;
-    margin-right: 1rem;
-    font-size: 700;
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 3rem;
+    }
   }
 `;
 
 const About = styled.section`
   margin: 3rem 0;
-  background-image: url(${seba});
-  background-size: 25%;
-  background-repeat: no-repeat;
+  @media (min-width: 768px) {
+    background-image: url(${seba});
+    background-size: 25%;
+    background-repeat: no-repeat;
+  }
 `;
 
 const Quote = styled.section`
@@ -91,7 +77,7 @@ const Quote = styled.section`
 
 const Services = styled.section`
   background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
-  padding: 2rem 0;
+  padding: 4rem 0 1rem;
 
   [class^="icon-"] {
     font-size: 3rem !important;
@@ -100,9 +86,26 @@ const Services = styled.section`
   h3 {
     font-family: "Exo 2", sans-serif;
   }
+  a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px dotted #000;
+  }
 `;
+
 const Articles = styled.section`
   padding: 6rem 0;
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .title {
+    font-family: "exo 2", sans-serif;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
 `;
 
 const ContactSection = styled.section`
@@ -117,9 +120,20 @@ const MainButton = styled(Link)`
   color: #000;
   padding: 0.75rem 1.5rem;
   border-radius: 15px;
+  line-height: 1;
+  &:hover {
+    color: #000;
+    text-decoration: none;
+  }
 `;
 
 export default class IndexPage extends React.Component {
+  componentDidMount() {
+    window.addEventListener("scroll", function() {
+      var nav = document.getElementsByTagName("nav")[0];
+      nav.classList.toggle("sticky", window.scrollY > window.innerHeight - 64);
+    });
+  }
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
@@ -131,15 +145,7 @@ export default class IndexPage extends React.Component {
             <h1>Sebastian Zelonka</h1>
             <h2>UX Design , Front End Developer</h2>
           </div>
-          <NavHome>
-            <div className="container">
-              <Link to="/">Home</Link>
-              <Link to="/">About</Link>
-              <Link to="/">Services</Link>
-              <Link to="/">Articles</Link>
-              <Link to="/">Contact</Link>
-            </div>
-          </NavHome>
+          <Navigation class="home" />
         </Top>
         <About>
           <Container>
@@ -200,34 +206,29 @@ export default class IndexPage extends React.Component {
               <Col md="12" className="text-center mb-5">
                 <h2>Sevicios</h2>
               </Col>
-              <Col md="4" className="text-center">
+              <Col md="4" className="text-center mb-5">
                 <SimpleLineIcon name="rocket" />
-                <h3>Consultoría UX</h3>
+                <h3>UX Consultant</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Laboriosam nihil aliquid id neque iste a blanditiis laudantium
-                  ex tenetur itaque architecto sunt, illo, numquam non
-                  accusantium tempora. Labore, facere fugiat.
+                  Define a customer experience vision and success criteria to
+                  have better experiences, will create happy customers and
+                  businesses.
                 </p>
               </Col>
-              <Col md="4" className="text-center">
+              <Col md="4" className="text-center mb-5">
                 <SimpleLineIcon name="diamond" />
-                <h3>UI Design</h3>
+                <h3>UI/UX Design</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Laboriosam nihil aliquid id neque iste a blanditiis laudantium
-                  ex tenetur itaque architecto sunt, illo, numquam non
-                  accusantium tempora. Labore, facere fugiat.
+                  Follow the Design Thinking process to define, create and test
+                  great User Interfaces that are easy o use.
                 </p>
               </Col>
-              <Col md="4" className="text-center">
+              <Col md="4" className="text-center mb-5">
                 <SimpleLineIcon name="wrench" />
-                <h3>Development</h3>
+                <h3>FrontEnd Dev</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Laboriosam nihil aliquid id neque iste a blanditiis laudantium
-                  ex tenetur itaque architecto sunt, illo, numquam non
-                  accusantium tempora. Labore, facere fugiat.
+                  Handcrafted websites to improve online precense. We work with
+                  high standards providing mobile and accesible sites.
                 </p>
               </Col>
             </Row>
@@ -236,21 +237,17 @@ export default class IndexPage extends React.Component {
         <Articles>
           <div className="container">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Article</h1>
+              <h2>Latest Article</h2>
             </div>
             {posts.map(({ node: post }) => (
-              <div>
-                <p>
-                  <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <MainButton to={post.fields.slug}>Keep Reading</MainButton>
-                </p>
+              <div key={post.frontmatter.date}>
+                <Link to={post.fields.slug} className="title">
+                  {post.frontmatter.title}
+                </Link>
+                <span> &bull; </span>
+                <small>{post.frontmatter.date}</small>
+                <p>{post.excerpt}</p>
+                <MainButton to={post.fields.slug}>Keep Reading</MainButton>
               </div>
             ))}
           </div>

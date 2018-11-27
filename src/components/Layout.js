@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   font-family: "merriweather", serif;
   font-size: 1.125rem;
   line-height: 2rem;
+
   h1,
   h2,
   h3 {
@@ -27,7 +28,7 @@ const MainContent = styled.div`
 const TemplateWrapper = ({ children }) => (
   <Wrapper>
     <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
+    <Navbar class="fixed" />
     <MainContent>{children}</MainContent>
     <Footer />
   </Wrapper>

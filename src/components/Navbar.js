@@ -14,18 +14,34 @@ import {
 
 const NavigationWrapper = styled(Navbar)`
   background-color: #000 !important;
-  position: fixed !important;
+  position: fixed;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 100;
+
   &::after {
     position: absolute;
     content: "";
-    bottom: -5px;
+    bottom: 0;
     height: 5px;
     left: 0;
     right: 0;
     background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
+  }
+  &.home {
+    position: absolute !important;
+    bottom: 0 !important;
+    .navbar-brand {
+      opacity: 0;
+    }
+  }
+  &.sticky {
+    position: fixed !important;
+    top: 0;
+    bottom: initial !important;
+    .navbar-brand {
+      opacity: 1;
+    }
   }
   a {
     font-family: "exo 2", sans-serif;
@@ -36,18 +52,19 @@ const NavigationWrapper = styled(Navbar)`
     background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
     color: transparent;
     background-clip: text;
+    -webkit-background-clip: text;
   }
 `;
 
-export default class Example extends React.Component {
+export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -55,17 +72,20 @@ export default class Example extends React.Component {
   }
   render() {
     return (
-      <NavigationWrapper expand="md">
+      <NavigationWrapper
+        expand="md"
+        className={`${this.props.class} navbar-dark bg-dark`}
+      >
         <Container>
           <NavbarBrand href="/">Sebastian Zelonka</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">Components</NavLink>
+                <NavLink href="/">About Me</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">GitHub</NavLink>
+                <NavLink href="/articles/">Articles</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
