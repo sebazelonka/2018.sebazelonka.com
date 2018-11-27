@@ -17,31 +17,33 @@ const MainButton = styled(Link)`
 `;
 
 const Articles = styled.section`
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 4rem;
-  }
   .article-item {
-    background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
-    border: 2px solid #000;
+    background-color: #000;
     padding: 1rem;
     height: 20rem;
     display: flex;
     flex-direction: column;
     color: #000;
+    border-radius: 15px;
+    transition: 0.25s;
     &:hover {
       text-decoration: none;
+      border-radius: 0;
+    }
+    .title {
+      font-size: 1.5rem;
+      background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    .description {
+      color: #fff;
     }
     .date {
-      margin-top: auto;
+      color: #fff;
+      margin: auto 0 0;
     }
-  }
-  .title {
-    font-family: "exo 2", sans-serif;
-    color: #333;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    display: inline-block;
   }
 `;
 
@@ -62,11 +64,12 @@ export default class IndexPage extends React.Component {
             <Row>
               {posts.map(({ node: post }) => (
                 <Col key={post.frontmatter.date} md="4">
-                  <Link to="{post.fields.slug}">
-                    <div className="article-item">
-                      <h2>{post.frontmatter.title}</h2>
-                      <p className="date">{post.frontmatter.date}</p>
-                    </div>
+                  <Link to={post.fields.slug} className="article-item">
+                    <h2 className="title">{post.frontmatter.title}</h2>
+                    <p className="description">
+                      {post.frontmatter.description}
+                    </p>
+                    <p className="date">{post.frontmatter.date}</p>
                   </Link>
                 </Col>
               ))}
