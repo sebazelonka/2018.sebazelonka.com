@@ -9,7 +9,8 @@ import { Container, Row, Col } from "reactstrap";
 import styled from "styled-components";
 
 const TopArticle = styled(Row)`
-  margin: 3rem 0;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   h1 {
     margin-bottom: 1.5rem;
   }

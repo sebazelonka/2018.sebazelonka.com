@@ -31,9 +31,9 @@ const Articles = styled.section`
     display: flex;
     flex-direction: column;
     color: #000;
-    border-radius: 15px;
     transition: 0.25s;
-    margin-bottom: 1rem;
+    border-bottom: 1px solid #000;
+    margin-bottom: 2rem;
     &:hover {
       text-decoration: none;
       background-color: #000;
@@ -94,6 +94,7 @@ export const pageQuery = graphql`
   query ArticlesQuery {
     allMarkdownRemark(
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {

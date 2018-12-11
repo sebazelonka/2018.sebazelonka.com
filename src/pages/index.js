@@ -229,7 +229,6 @@ export default class IndexPage extends React.Component {
               </Col>
             </Row>
             <Row>
-              <div className="content" />
               {posts.map(({ node: post }) => (
                 <Col key={post.frontmatter.date} md="4">
                   <Link to={post.fields.slug} className="article-item">
