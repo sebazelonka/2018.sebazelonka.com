@@ -6,6 +6,8 @@ import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Footer from "./Footer";
 
+import favicon from "../img/favicon.png";
+
 const Wrapper = styled.div`
   font-family: "merriweather", serif;
   font-size: 1.125rem;
@@ -28,8 +30,9 @@ const TemplateWrapper = ({ children }) => (
   <Wrapper>
     <Helmet>
       <Title>
-        Sebastian Zelonka | Where UX Design meets Front End Development jajajaj
+        Sebastian Zelonka | Where UX Design meets Front End Development
       </Title>
+      <link rel="icon" type="image/png" href={favicon} />
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-49715544-1"
