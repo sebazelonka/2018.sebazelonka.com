@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Eventos UX de fin de año en Argentina
 date: 2018-12-06T00:55:44.799Z
-image: /img/eventos-ba.png
+image: /img/sebazelonka.eventos-ba.png
 description: >-
   La semana pasada asistí a dos eventos de la comunidad UX de
   Buenos Aires. Algunas reflexiones.
