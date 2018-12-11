@@ -152,15 +152,18 @@ export default class IndexPage extends React.Component {
             </Row>
             <Row>
               <Col md={{ size: 5, offset: 4 }}>
-                <Link to="/">
+                <a
+                  href="https://www.linkedin.com/in/sebastianzelonka/"
+                  target="blank"
+                >
                   <SimpleLineIcon name="social-linkedin" />
-                </Link>
-                <Link to="/">
+                </a>
+                <a href="https://github.com/sebazelonka" target="blank">
                   <SimpleLineIcon name="social-github" />
-                </Link>
-                <Link to="https://twitter.com/sebazelonka" target="blank">
+                </a>
+                <a href="https://twitter.com/sebazelonka" target="blank">
                   <SimpleLineIcon name="social-twitter" />
-                </Link>
+                </a>
               </Col>
             </Row>
           </Container>

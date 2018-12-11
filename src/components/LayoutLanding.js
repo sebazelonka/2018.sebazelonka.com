@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
 const LandingTemplateWrapper = ({ children }) => (
   <Wrapper>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet title="Sebastian Zelonka | Where UX Design meets Front End Development" />
     <>{children}</>
     <Footer />
   </Wrapper>

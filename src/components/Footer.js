@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import SimpleLineIcon from "react-simple-line-icons";
 
@@ -30,15 +29,15 @@ export default class Footer extends React.Component {
   render() {
     return (
       <FooterSection>
-        <Link to="/">
+        <a href="https://www.linkedin.com/in/sebastianzelonka/" target="blank">
           <SimpleLineIcon name="social-linkedin" />
-        </Link>
-        <Link to="/">
+        </a>
+        <a href="https://github.com/sebazelonka" target="blank">
           <SimpleLineIcon name="social-github" />
-        </Link>
-        <Link to="/">
+        </a>
+        <a href="https://twitter.com/sebazelonka" target="blank">
           <SimpleLineIcon name="social-twitter" />
-        </Link>
+        </a>
       </FooterSection>
     );
   }

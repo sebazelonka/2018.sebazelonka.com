@@ -27,7 +27,7 @@ const MainContent = styled.div`
 
 const TemplateWrapper = ({ children }) => (
   <Wrapper>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet title="Sebastian Zelonka | Where UX Design meets Front End Development" />
     <Navbar class="fixed" />
     <MainContent>{children}</MainContent>
     <Footer />
