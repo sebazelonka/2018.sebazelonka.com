@@ -46,7 +46,7 @@ const Articles = styled.section`
   .article-item {
     /* background-color: #000; */
     padding: 1rem;
-    min-height: 10rem;
+    min-height: 20rem;
     display: flex;
     flex-direction: column;
     color: #000;

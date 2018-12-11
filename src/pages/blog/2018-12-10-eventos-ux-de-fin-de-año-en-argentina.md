@@ -4,9 +4,8 @@ title: Eventos UX de fin de año en Argentina
 date: 2018-12-06T00:55:44.799Z
 image: /img/dtvbrdrxoaau47e.jpg-large.jpeg
 description: >-
-  La semana pasada tuve oportunidad de asistir a 2 eventos de la comunidad UX de
-  Buenos Aires, “Experiencia de usuario en el diseño de productos y servicios” y
-  el “UX Summit ‘18”. Algunas reflexiones.
+  La semana pasada asistí a dos eventos de la comunidad UX de
+  Buenos Aires. Algunas reflexiones.
 tags:
   - IDF
   - IXDA
