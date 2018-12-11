@@ -9,7 +9,7 @@ description: >-
 tags:
   - '"carrer advice"'
 ---
-Aprovechando los últimos meses que estuve sin trabajar, me dediqué a aprender **React** y actualizar mi perfil "Frontender".
+Aprovechando los últimos meses que estuve con más tiempo, me dediqué a aprender **React** y actualizar mi perfil "Frontender".
 
 Parte de este aprendizaje me llevó a explorar diversas opciones y la mejor manera, desde mi punto de vista, es prueba y error. De ésta manera pude ir conociendo diferentes formas de hacer las cosas.
 
