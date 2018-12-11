@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { Container, Row, Col } from "reactstrap";
-import SimpleLineIcon from "react-simple-line-icons";
 import styled from "styled-components";
 
 import Contact from "../components/Contact";
 
-import seba from "../img/about.png";
-import aboutTop from "../img/about-top.png";
+import seba from "../img/about.jpg";
+import aboutTop from "../img/about_top.jpg";
 
 const Top = styled.section`
   background-image: url(${aboutTop});
@@ -120,14 +119,18 @@ export default class IndexPage extends React.Component {
             <Row>
               <Col md={{ size: 6, offset: 3 }}>
                 <p>
-                  Hi, I'm Sebastian, a Product Designer from Buenos Aires,
-                  Argentina. I have more than 10 years of experience on Digital
-                  Products and I've worked on several projects from different
-                  industries: B2B, B2C, Non Profit Orgs, Volunteer.{" "}
+                  Hi, I'm Sebastian, a UX Designer that likes to code. I born in
+                  Buenos Aires, Argentina.
                 </p>
                 <p>
-                  I like to start new endeavors because I love to discover,
-                  learn and understand specific problems from different worlds.
+                  I have 8+ years of experience on Digital Products and I've
+                  worked on several projects from different industries: B2B,
+                  B2C, Non Profit Orgs, Volunteer.
+                </p>
+                <p>I like to start new endeavors. </p>
+                <p>
+                  I love to discover, learn and understand problems to find the
+                  simpler solutions.
                 </p>
                 <p>
                   Because of the type of clients I primarily work with, I’m not

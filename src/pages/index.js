@@ -39,39 +39,21 @@ const Top = styled.section`
 `;
 
 const About = styled.section`
-  margin: 3rem 0;
+  margin: 5rem 0;
+  min-height: 75vh;
   @media (min-width: 768px) {
     background-image: url(${seba});
-    background-size: 25%;
+    background-size: 30%;
     background-repeat: no-repeat;
   }
-`;
-
-const Quote = styled.section`
-  margin: 5rem 0;
-  .wrapper {
-    position: relative;
-    padding-left: 3rem;
-    &::after {
-      content: "";
-      position: absolute;
-      left: 15px;
-      width: 10px;
-      top: 0;
-      background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
-      bottom: 0;
-      z-index: 1;
+  a {
+    color: #000;
+    text-decoration: none;
+    div {
+      font-size: 2rem !important;
+      display: inline-flex;
+      margin: 2rem 1rem 0 0;
     }
-  }
-  .quote {
-    font-family: "merriweather", serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    font-style: italic;
-  }
-  .author {
-    font-family: "Exo 2", sans-serif;
-    font-weight: 700;
   }
 `;
 
@@ -143,91 +125,74 @@ export default class IndexPage extends React.Component {
         <Top>
           <div className="container">
             <h1>Sebastian Zelonka</h1>
-            <h2>UX Design , Front End Developer</h2>
+            <h2>UX Design, Front End Developer</h2>
           </div>
           <Navigation class="home" />
         </Top>
         <About>
           <Container>
             <Row>
-              <Col md={{ size: 6, offset: 3 }}>
+              <Col md={{ size: 5, offset: 4 }}>
+                <h1>Born in Argentina, working worldwide</h1>
                 <p>
                   Hi, I'm Sebastian, a Product Designer from Buenos Aires,
-                  Argentina. I have more than 10 years of experience on Digital
-                  Products and I've worked on several projects from different
-                  industries: B2B, B2C, Non Profit Orgs, Volunteer.{" "}
+                  Argentina.
                 </p>
                 <p>
-                  I like to start new endeavors because I love to discover,
-                  learn and understand specific problems from different worlds.
+                  I have 8+ years of experience on Digital Products and I've
+                  worked on several projects from different industries: B2B,
+                  B2C, Non Profit Orgs, Volunteer.
                 </p>
+                <p>I like to start new endeavors. </p>
                 <p>
-                  Because of the type of clients I primarily work with, I’m not
-                  able to display some of the work I did. If you would like to
-                  see some examples or something a bit more specific, please get
-                  in touch and I’d be happy to send you some examples! Usually,
-                  you can find me hanging out on Twitter both in Spanish and
-                  English. I would love to hear you!
+                  I love to discover, learn and understand problems to find the
+                  simpler solutions.
                 </p>
-                <h3>Experience</h3>
-                <ul>
-                  <li>Freelance 2008 - Present </li>
-                  <li>Onapsis 2016 - 2018</li>
-                  <li>Wolox 2015 - 2016</li>
-                  <li>Aquicore 2014 - 2015</li>
-                  <li>Zauber 2011 - 2013</li>
-                </ul>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={{ size: 5, offset: 4 }}>
+                <Link to="/">
+                  <SimpleLineIcon name="social-linkedin" />
+                </Link>
+                <Link to="/">
+                  <SimpleLineIcon name="social-github" />
+                </Link>
+                <Link to="https://twitter.com/sebazelonka" target="blank">
+                  <SimpleLineIcon name="social-twitter" />
+                </Link>
               </Col>
             </Row>
           </Container>
         </About>
-        <Quote>
-          <Container>
-            <Row>
-              <Col md={{ size: 6, offset: 3 }} className="wrapper">
-                <p className="quote">
-                  I worked with Sebastian and depended on him to provide UX
-                  designs and workflows to ensure proposed features would both
-                  work within the existing product UI and enhance the experience
-                  of our users. Sebastian always provided clear designs and
-                  typically provide alternate designs in order to present the
-                  best possible options.
-                </p>
-                <p className="author">
-                  Alex Horan • Director of Product Management, Onapsis
-                </p>
-              </Col>
-            </Row>
-          </Container>
-        </Quote>
         <Services>
           <Container>
             <Row>
               <Col md="12" className="text-center mb-5">
-                <h2>Sevicios</h2>
+                <h2>Skills</h2>
               </Col>
               <Col md="4" className="text-center mb-5">
                 <SimpleLineIcon name="rocket" />
                 <h3>UX Consultant</h3>
                 <p>
-                  Define a customer experience vision and success criteria to
-                  have better experiences, will create happy customers and
-                  businesses.
+                  Define customer experience vision and success criterias to
+                  have amazing experiences around your products to create happy
+                  customers.
                 </p>
               </Col>
               <Col md="4" className="text-center mb-5">
                 <SimpleLineIcon name="diamond" />
                 <h3>UI/UX Design</h3>
                 <p>
-                  Follow the Design Thinking process to define, create and test
-                  great User Interfaces that are easy o use.
+                  Follow the User Centered Design process to define, create and
+                  test great User Interfaces and flows that are easy to use.
                 </p>
               </Col>
               <Col md="4" className="text-center mb-5">
                 <SimpleLineIcon name="wrench" />
                 <h3>FrontEnd Dev</h3>
                 <p>
-                  Handcrafted websites to improve online precense. We work with
+                  Handcrafted websites to improve online precense working with
                   high standards providing mobile and accesible sites.
                 </p>
               </Col>
@@ -256,7 +221,7 @@ export default class IndexPage extends React.Component {
           <Container>
             <Row className="mb-5">
               <Col className="text-center">
-                <h1>Contact</h1>
+                <h1>Get in Touch</h1>
               </Col>
             </Row>
             <Row>
