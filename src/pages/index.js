@@ -162,7 +162,7 @@ export default class IndexPage extends React.Component {
                   worked on several projects from different industries: B2B,
                   B2C, Non Profit Orgs, Volunteer.
                 </p>
-                <p>I like to start new endeavors. </p>
+                <p>I like starting new endeavors and challenges.</p>
                 <p>
                   I love to discover, learn and understand problems to find the
                   simpler solutions.
