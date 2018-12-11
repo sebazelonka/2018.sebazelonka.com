@@ -1,5 +1,5 @@
 import React from "react";
-import Helmet from "react-helmet";
+import Helmet, { Title } from "react-helmet";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
 
@@ -26,7 +26,22 @@ const MainContent = styled.div`
 
 const TemplateWrapper = ({ children }) => (
   <Wrapper>
-    <Helmet title="Sebastian Zelonka | Where UX Design meets Front End Development" />
+    <Helmet>
+      <Title>
+        Sebastian Zelonka | Where UX Design meets Front End Development jajajaj
+      </Title>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-49715544-1"
+      />
+      <script>
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments); }
+        gtag('js', new Date());
+      
+        gtag('config', 'UA-49715544-1');`}
+      </script>
+    </Helmet>
     <Navbar class="fixed" />
     <MainContent>{children}</MainContent>
     <Footer />
