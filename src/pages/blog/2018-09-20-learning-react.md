@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Learning React as a UX Designer
 date: 2018-09-20T20:16:07.336Z
+image: /img/learning.png
 description: >-
   Thoughts about why I think is a good idea to learn to code as a UX Designer
 

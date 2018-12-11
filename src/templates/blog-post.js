@@ -126,8 +126,7 @@ const BlogPost = ({ data }) => {
               name="description"
               content={`${post.frontmatter.description}`}
             />
-
-            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:creator" content="@sebazelonka" />
             <meta
               property="og:url"
