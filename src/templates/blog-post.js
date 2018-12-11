@@ -126,6 +126,22 @@ const BlogPost = ({ data }) => {
               name="description"
               content={`${post.frontmatter.description}`}
             />
+
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:creator" content="@sebazelonka" />
+            <meta
+              property="og:url"
+              content={"https://sebazelonka.com" + `${post.fields.slug}`}
+            />
+            <meta property="og:title" content={post.frontmatter.title} />
+            <meta
+              property="og:description"
+              content={post.frontmatter.description}
+            />
+            <meta
+              property="og:image"
+              content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg"
+            />
           </Helmet>
         }
         tags={post.frontmatter.tags}
@@ -147,6 +163,9 @@ export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
+      fields {
+        slug
+      }
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
