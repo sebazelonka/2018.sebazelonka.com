@@ -214,7 +214,7 @@ export default class IndexPage extends React.Component {
                 <SimpleLineIcon name="wrench" />
                 <h3>FrontEnd Dev</h3>
                 <p>
-                  Handcrafted websites to improve online precense working with
+                  Handcrafted websites to improve online presence working with
                   high standards providing mobile and accesible sites.
                 </p>
               </Col>
