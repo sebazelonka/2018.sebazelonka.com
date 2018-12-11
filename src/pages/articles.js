@@ -11,16 +11,8 @@ const Title = styled.section`
   align-items: center;
   justify-content: center;
   background: #000;
-  height: 35vh;
+  height: 50vh;
   display: flex;
-
-  background: -moz-radial-gradient(#666 10%, transparent 10%),
-    -moz-radial-gradient(#666 10%, transparent 10%), black;
-  background: -webkit-radial-gradient(#666 10%, transparent 10%),
-    -webkit-radial-gradient(#666 10%, transparent 10%), black;
-  background-position: 0 0, 80px 80px;
-
-  background-size: 10px 10px;
 
   h1 {
     font-size: 3rem;
@@ -32,9 +24,8 @@ const Title = styled.section`
 `;
 
 const Articles = styled.section`
-  margin: 2rem 0;
+  padding: 5rem 0;
   .article-item {
-    /* background-color: #000; */
     padding: 1rem;
     min-height: 20rem;
     display: flex;
@@ -45,12 +36,12 @@ const Articles = styled.section`
     margin-bottom: 1rem;
     &:hover {
       text-decoration: none;
-      background-color: #333;
+      background-color: #000;
       color: #fff;
     }
     .title {
       font-size: 1.5rem;
-      color: #00c6d1;
+      color: #16a3bc;
     }
     .date {
       font-size: 0.75rem;

@@ -21,7 +21,6 @@ const Wrapper = styled.div`
 
 const MainContent = styled.div`
   padding-top: 64px;
-  padding-bottom: 5rem;
   min-height: calc(100vh - 7rem);
 `;
 

@@ -53,6 +53,10 @@ const About = styled.section`
       font-size: 2rem !important;
       display: inline-flex;
       margin: 2rem 1rem 0 0;
+      transition: 0.25s;
+      &:hover {
+        transform: scale(1.25);
+      }
     }
   }
 `;
@@ -77,36 +81,51 @@ const Services = styled.section`
 
 const Articles = styled.section`
   padding: 6rem 0;
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  .title {
-    font-family: "exo 2", sans-serif;
-    color: #333;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    display: inline-block;
+  .article-item {
+    padding: 1rem;
+    min-height: 15rem;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background: #000;
+    border-radius: 15px;
+    transition: 0.25s;
+    margin-bottom: 1rem;
+
+    .title {
+      font-size: 1.5rem;
+      background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    .date {
+      font-size: 0.75rem;
+      margin: auto 0 0;
+    }
+    .bottom {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      [class^="icon-"] {
+        background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+    }
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+      transform: scale(1.1);
+      transition: 0.25s;
+    }
   }
 `;
 
 const ContactSection = styled.section`
   padding: 6rem 0;
-`;
-
-const MainButton = styled(Link)`
-  font-family: "Exo 2", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  border-radius: 15px;
-  line-height: 1;
-  &:hover {
-    color: #000;
-    text-decoration: none;
-  }
 `;
 
 export default class IndexPage extends React.Component {
@@ -203,22 +222,27 @@ export default class IndexPage extends React.Component {
           </Container>
         </Services>
         <Articles>
-          <div className="container">
-            <div className="content">
-              <h2>Latest Article</h2>
-            </div>
-            {posts.map(({ node: post }) => (
-              <div key={post.frontmatter.date}>
-                <Link to={post.fields.slug} className="title">
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
-                <small>{post.frontmatter.date}</small>
-                <p>{post.frontmatter.description}</p>
-                <MainButton to={post.fields.slug}>Keep Reading</MainButton>
-              </div>
-            ))}
-          </div>
+          <Container>
+            <Row className="mb-5">
+              <Col className="text-center">
+                <h1>Latest Articles</h1>
+              </Col>
+            </Row>
+            <Row>
+              <div className="content" />
+              {posts.map(({ node: post }) => (
+                <Col key={post.frontmatter.date} md="4">
+                  <Link to={post.fields.slug} className="article-item">
+                    <h2 className="title">{post.frontmatter.title}</h2>
+                    <div className="bottom">
+                      <p className="date">{post.frontmatter.date}</p>
+                      <SimpleLineIcon name="eyeglass" />
+                    </div>
+                  </Link>
+                </Col>
+              ))}
+            </Row>
+          </Container>
         </Articles>
         <ContactSection>
           <Container>
@@ -250,7 +274,7 @@ IndexPage.propTypes = {
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
-      limit: 1
+      limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
