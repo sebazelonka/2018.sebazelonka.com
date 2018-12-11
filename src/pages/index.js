@@ -211,7 +211,7 @@ export default class IndexPage extends React.Component {
                 </Link>
                 <span> &bull; </span>
                 <small>{post.frontmatter.date}</small>
-                <p>{post.excerpt}</p>
+                <p>{post.frontmatter.description}</p>
                 <MainButton to={post.fields.slug}>Keep Reading</MainButton>
               </div>
             ))}
@@ -246,7 +246,10 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(limit: 1) {
+    allMarkdownRemark(
+      limit: 1
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 400)
@@ -256,6 +259,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            description
             templateKey
             date(formatString: "MMMM DD, YYYY")
           }
