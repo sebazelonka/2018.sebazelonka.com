@@ -84,6 +84,7 @@ export const BlogPostTemplate = ({
         <ContentArticle>
           <Col md={{ size: 8, offset: 2 }}>
             <PostContent content={content} />
+            <div class="sharethis-inline-share-buttons mt-5" />
             {tags && tags.length ? (
               <ul className="tags">
                 {tags.map(tag => (
@@ -143,6 +144,11 @@ const BlogPost = ({ data }) => {
                 "https://sebazelonka.com" +
                 `${post.frontmatter.image.childImageSharp.original.src}`
               }
+            />
+            <script
+              type="text/javascript"
+              src="//platform-api.sharethis.com/js/sharethis.js#property=5c0fe0f87b0b4500110a1c1a&product=inline-share-buttons"
+              async="async"
             />
           </Helmet>
         }
