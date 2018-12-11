@@ -138,7 +138,13 @@ const BlogPost = ({ data }) => {
               property="og:description"
               content={post.frontmatter.description}
             />
-            <meta property="og:image" content={post.frontmatter.image} />
+            <meta
+              property="og:image"
+              content={
+                "https://sebazelonka.com" +
+                `${post.frontmatter.image.childImageSharp.original.src}`
+              }
+            />
           </Helmet>
         }
         tags={post.frontmatter.tags}
@@ -168,8 +174,16 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        image
         tags
+        image {
+          childImageSharp {
+            original {
+              width
+              height
+              src
+            }
+          }
+        }
       }
     }
   }
