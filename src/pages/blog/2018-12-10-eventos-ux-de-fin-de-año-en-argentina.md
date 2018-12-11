@@ -8,18 +8,17 @@ description: >-
   Buenos Aires, “Experiencia de usuario en el diseño de productos y servicios” y
   el “UX Summit ‘18”. Algunas reflexiones.
 tags:
-  - UX
   - IDF
   - IXDA
+  - UX
   - User Experience
 ---
+
 ## Experiencia de usuario en el diseño de productos y servicios — Salón Auditorio INTI
 
 ![](/img/20181128_085608_hdr.jpg)
 
 El primero, realizado el miércoles 28 de noviembre, llevaba como nombre “Experiencia de usuario en el diseño de productos y servicios” y tuvo lugar en un nuevo escenario para el “mundo” UX. El lugar fue el INTI y la agenda del evento tuvo un excelente nivel.
-
-
 
 Expusieron **Lorena Paz, Juan Marcos Ortiz, Sebastián Betti y Eduardo Mercovich**.
 
@@ -43,22 +42,14 @@ El segundo workshop del que participé, lo llevaron adelante los chicos de Auth0
 
 Fue muy interesante ver el trabajo que están haciendo internamente para mejorar la accesibilidad de sus productos y por otro lado, para introducir a muchos en el tema de la accesibilidad web.
 
-
-
 ## Algunas (breves) conclusiones
 
 > Queremos que el diseño haga usable y accesible para todas las personas cada producto o servicio interactivo, sin importar el nivel de alfabetización digital y las capacidades físicas, sensoriales, e intelectuales que tengan.
 
 Me pareció muy interesante ver que en ambos eventos, esencialmente muy diferentes, se plantearon temas muy similares.
 
-
-
 La empatía y la inclusión (de género, cognitiva y física) fueron los temas centrales.
 
-
-
 Creo que de a poco estamos llegando a un nivel de madurez que nos permite cada vez más pensar en un Diseño Universal, Centrado en el Usuario y sin hacer distinciones entre los diferentes tipos de usuarios y eso siempre es una buena noticia. Como dijo Lore en su charla, esto es clave en un mundo cada vez mas mediatizado por interfaces. Todos más o menos pronto, vamos a necesitarlo.
-
-
 
 La cita de arriba corresponde al [“Movimiento de Diseño Inclusivo”](http://www.disenoinclusivo.org.ar/) y tiene más de 8 años. Estamos cada vez más cerca 💪

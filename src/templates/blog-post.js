@@ -9,7 +9,7 @@ import { Container, Row, Col } from "reactstrap";
 import styled from "styled-components";
 
 const TopArticle = styled(Row)`
-  margin-bottom: 3rem;
+  margin: 3rem 0;
   h1 {
     margin-bottom: 1.5rem;
   }
@@ -27,6 +27,19 @@ const TopArticle = styled(Row)`
 `;
 
 const ContentArticle = styled(Row)`
+  .gatsby-resp-image-link {
+    .gatsby-resp-image-wrapper {
+      .gatsby-resp-image-background-image {
+        padding-bottom: 0 !important;
+        img {
+          width: 100% !important;
+          height: initial !important;
+          position: relative !important;
+        }
+      }
+    }
+  }
+
   .tags {
     margin-top: 5rem;
     padding-left: 0;

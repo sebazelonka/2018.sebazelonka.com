@@ -7,7 +7,8 @@ description: >-
 
 tags:
   - carrer advice
-  - ux
+  - UX
+  - User Experience
 ---
 
 I always loved to understand and to “talk” the same language as developers.
@@ -22,4 +23,4 @@ This introduced me in a whole new world, because during the prior two years I wa
 
 After this amazing experience, I continued looking to improve my skills on React. Not to be a great developer, but to be a great UX Designer, understanding all the aspects of the product I’m working on.
 
-For sure I have a lot more to learn, but this is just the first step toward my vision of being a great UX Designer.
+For sure I have a lot more to learn, but this is just the first step toward my vision of being a
