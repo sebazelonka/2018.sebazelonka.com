@@ -6,16 +6,6 @@ import { Container, Row, Col } from "reactstrap";
 
 import styled from "styled-components";
 
-const MainButton = styled(Link)`
-  font-family: "Exo 2", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  border-radius: 15px;
-`;
-
 const Title = styled.section`
   display: flex;
   align-items: center;

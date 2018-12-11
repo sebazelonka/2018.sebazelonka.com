@@ -138,10 +138,7 @@ const BlogPost = ({ data }) => {
               property="og:description"
               content={post.frontmatter.description}
             />
-            <meta
-              property="og:image"
-              content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg"
-            />
+            <meta property="og:image" content={post.frontmatter.image} />
           </Helmet>
         }
         tags={post.frontmatter.tags}
@@ -171,8 +168,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        image
         tags
-        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

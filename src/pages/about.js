@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { Container, Row, Col } from "reactstrap";
 import styled from "styled-components";
@@ -48,56 +48,8 @@ const Quote = styled.section`
   }
 `;
 
-const Services = styled.section`
-  background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
-  padding: 4rem 0 1rem;
-
-  [class^="icon-"] {
-    font-size: 3rem !important;
-    margin-bottom: 2rem;
-  }
-  h3 {
-    font-family: "Exo 2", sans-serif;
-  }
-  a {
-    color: #000;
-    text-decoration: none;
-    border-bottom: 1px dotted #000;
-  }
-`;
-
-const Articles = styled.section`
-  padding: 6rem 0;
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  .title {
-    font-family: "exo 2", sans-serif;
-    color: #333;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-  }
-`;
-
 const ContactSection = styled.section`
   padding: 6rem 0;
-`;
-
-const MainButton = styled(Link)`
-  font-family: "Exo 2", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  background-image: linear-gradient(30deg, #b4ec51, #00c6d1);
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  border-radius: 15px;
-  line-height: 1;
-  &:hover {
-    color: #000;
-    text-decoration: none;
-  }
 `;
 
 export default class IndexPage extends React.Component {
@@ -108,9 +60,6 @@ export default class IndexPage extends React.Component {
     });
   }
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
-
     return (
       <Layout>
         <Top />
