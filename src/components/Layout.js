@@ -22,8 +22,8 @@ const Wrapper = styled.div`
 `;
 
 const MainContent = styled.div`
-  padding-top: 64px;
-  min-height: calc(100vh - 7rem);
+  padding-top: 58px;
+  min-height: calc(100vh - 58px);
 `;
 
 const TemplateWrapper = ({ children }) => (
