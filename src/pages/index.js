@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-import Layout from "../components/LayoutLanding";
+import Layout from "../components/Layout";
 import { Container, Row, Col } from "reactstrap";
 import SimpleLineIcon from "react-simple-line-icons";
 import styled from "styled-components";
 
 import seba from "../img/seba.png";
 import Contact from "../components/Contact";
-import Navigation from "../components/Navbar";
 
 const Top = styled.section`
   background-color: #000;
@@ -146,7 +145,6 @@ export default class IndexPage extends React.Component {
             <h1>Sebastian Zelonka</h1>
             <h2>UX Design, Front End Developer</h2>
           </div>
-          <Navigation class="home" />
         </Top>
         <About>
           <Container>
