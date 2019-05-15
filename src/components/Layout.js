@@ -45,9 +45,10 @@ const TemplateWrapper = ({ children }) => (
         gtag('config', 'UA-49715544-1');`}
       </script>
 
+      {/* Default Statcounter code for sebazelonka.com http://sebazelonka.com */}
       <script type="text/javascript">
         var sc_project=12008588; var sc_invisible=1; var sc_security="eb3986b8";
-        var sc_https=1;
+        var sc_https=1; var sc_remove_link=1;
       </script>
       <script
         type="text/javascript"
@@ -55,20 +56,11 @@ const TemplateWrapper = ({ children }) => (
         async
       />
       <noscript>
-        <div class="statcounter">
-          <a
-            title="Web Analytics Made Easy - StatCounter"
-            href="https://statcounter.com/"
-            target="_blank"
-          >
-            <img
-              class="statcounter"
-              src="https://c.statcounter.com/12008588/0/eb3986b8/1/"
-              alt="Web Analytics Made Easy - StatCounter"
-            />
-          </a>
-        </div>
+        &lt;div class="statcounter"&gt;&lt;img class="statcounter"
+        src="https://c.statcounter.com/12008588/0/eb3986b8/1/" alt="Web
+        Analytics Made Easy - StatCounter"&gt;&lt;/div&gt;
       </noscript>
+      {/* End of Statcounter Code */}
     </Helmet>
     <Navbar class="fixed" />
     <MainContent>{children}</MainContent>
