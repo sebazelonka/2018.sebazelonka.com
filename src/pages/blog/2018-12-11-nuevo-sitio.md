@@ -13,7 +13,7 @@ Aprovechando los últimos meses que estuve con más tiempo, me dediqué a aprend
 
 Parte de este aprendizaje me llevó a explorar diversas opciones y la mejor manera, desde mi punto de vista, es prueba y error. De ésta manera pude ir conociendo diferentes formas de hacer las cosas.
 
-Aprendí lo que es un [_HeadlessCMS_](https://headlesscms.org/about), conocí [Gatsby](https://www.gatsbyjs.org/) y hice un par de cursos de [Wes Bos](https://wesbos.com/courses/) (en inglés).
+Aprendí lo que es un [_HeadlessCMS_](https://headlesscms.org/about), conocí [Gatsby](https://www.gatsbyjs.org/) e hice un par de cursos de [Wes Bos](https://wesbos.com/courses/) (en inglés).
 
 También aprendí (y no terminé de implementar aún) que existen un montón de [Meta Tags](https://css-tricks.com/essential-meta-tags-social-media/) para definir qué y cómo queremos que se muestre el contenido que se comparte.
 
