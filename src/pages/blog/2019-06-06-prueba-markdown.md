@@ -7,7 +7,7 @@ description: lalala
 tags:
   - pruebas
 ---
-| Tables   |      Are      |  Cool |
+| Tonga   |      Arre      |  Itnop |
 |----------|:-------------:|------:|
 | col 1 is |  left-aligned | $1600 |
 | col 2 is |    centered   |   $12 |
