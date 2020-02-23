@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import { Container, Row, Col } from "reactstrap";
 import styled from "styled-components";
 
-import Contact from "../components/Contact";
+import { Contact } from "../components/Contact";
 
 import seba from "../img/about.jpg";
 import aboutTop from "../img/about_top.jpg";
@@ -124,7 +124,7 @@ export default class IndexPage extends React.Component {
           <img src={seba} alt="" className="img-fluid" />
         </section>
 
-        {/* <ContactSection>
+        <ContactSection>
           <Container>
             <Row className="mb-5">
               <Col className="text-center">
@@ -137,7 +137,7 @@ export default class IndexPage extends React.Component {
               </Col>
             </Row>
           </Container>
-        </ContactSection> */}
+        </ContactSection>
       </Layout>
     );
   }

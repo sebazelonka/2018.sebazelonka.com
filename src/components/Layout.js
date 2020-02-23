@@ -1,5 +1,5 @@
 import React from "react";
-import Helmet, { Title } from "react-helmet";
+import Helmet from "react-helmet";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
 
@@ -29,9 +29,9 @@ const MainContent = styled.div`
 const TemplateWrapper = ({ children }) => (
   <Wrapper>
     <Helmet>
-      <Title>
+      <title>
         Sebastian Zelonka | Where UX Design meets Front End Development
-      </Title>
+      </title>
       <link rel="icon" type="image/png" href={favicon} />
       <script
         async

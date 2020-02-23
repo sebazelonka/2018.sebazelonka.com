@@ -1,9 +1,7 @@
-import React from "react";
-import { navigate } from "gatsby-link";
-import { Button, Form, Label, Input } from "reactstrap";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-const FormWrapper = styled(Form)`
+const FormWrapper = styled.form`
   input:focus,
   textarea:focus {
     box-shadow: none;
@@ -11,6 +9,10 @@ const FormWrapper = styled(Form)`
   }
   textarea {
     box-shadow: none;
+  }
+  input,
+  textarea {
+    width: 100%;
   }
   .label {
     margin: 1.25rem 0 0.5rem;
@@ -29,107 +31,130 @@ const FormWrapper = styled(Form)`
   }
 `;
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
+const Contact = () => {
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    subject: "StaticForms - Contact Form",
+    honeypot: "", // if any value received in this field, form submission will be ignored.
+    message: "",
+    replyTo: "@", // this will set replyTo of email to email address entered in the form
+    accessKey: "ee8f6b80-d434-498a-96e0-7a3dbbc5ecfa" // get your access key from https://www.staticforms.xyz
+  });
 
-export default class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isValidated: false };
-  }
+  const [response, setResponse] = useState({
+    type: "",
+    message: ""
+  });
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  const handleChange = e =>
+    setContact({ ...contact, [e.target.name]: e.target.value });
 
-  handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    const form = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state
-      })
-    })
-      .then(() => navigate(form.getAttribute("action")))
-      .catch(error => alert(error));
+    try {
+      const res = await fetch("https://api.staticforms.xyz/submit", {
+        method: "POST",
+        body: JSON.stringify(contact),
+        headers: { "Content-Type": "application/json" }
+      });
+
+      const json = await res.json();
+
+      if (json.success) {
+        setResponse({
+          type: "success",
+          message: "Thank you for reaching out to us."
+        });
+      } else {
+        setResponse({
+          type: "error",
+          message: json.message
+        });
+      }
+    } catch (e) {
+      console.log("An error occurred", e);
+      setResponse({
+        type: "error",
+        message: "An error occured while submitting the form"
+      });
+    }
   };
 
-  render() {
-    return (
-      <>
-        <FormWrapper
-          name="contact"
-          method="post"
-          action="/contact/thanks/"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={this.handleSubmit}
-        >
-          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-          <Input type="hidden" name="form-name" value="contact" />
-          <div hidden>
-            <Label>
-              Don’t fill this out:{" "}
-              <Input name="bot-field" onChange={this.handleChange} />
-            </Label>
-          </div>
-          <div className="field">
-            <Label className="label" htmlFor={"name"}>
-              Your name
-            </Label>
-            <div className="control">
-              <Input
-                className="input"
-                type={"text"}
-                name={"name"}
-                onChange={this.handleChange}
-                id={"name"}
-                required={true}
-              />
-            </div>
-          </div>
-          <div className="field">
-            <Label className="label" htmlFor={"email"}>
-              Email
-            </Label>
-            <div className="control">
-              <Input
-                className="input"
-                type={"email"}
-                name={"email"}
-                onChange={this.handleChange}
-                id={"email"}
-                required={true}
-              />
-            </div>
-          </div>
-          <div className="field">
-            <Label className="label" htmlFor={"message"}>
-              Message
-            </Label>
-            <div className="control">
-              <Input
-                type="textarea"
-                name={"message"}
-                onChange={this.handleChange}
-                id={"email"}
-                required={true}
-              />
-            </div>
-          </div>
-          <div className="field">
-            <Button className="main-button" type="submit">
-              Send
-            </Button>
-          </div>
-        </FormWrapper>
-      </>
-    );
-  }
-}
+  return (
+    <FormWrapper
+      action="https://api.staticforms.xyz/submit"
+      method="post"
+      onSubmit={handleSubmit}
+    >
+      <p>{response.message}</p>
+      <div className="field">
+        <label className="label" htmlFor="name">
+          Your Name
+        </label>
+        <div className="control">
+          <input
+            className="input"
+            type="text"
+            placeholder="Name"
+            name="name"
+            onChange={handleChange}
+            required
+          />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label" htmlFor="email">
+          Your Email
+        </label>
+        <div className="control">
+          <input
+            className="input"
+            type="email"
+            placeholder="Email"
+            name="email"
+            onChange={handleChange}
+            required
+          />
+        </div>
+      </div>
+      <div className="field" style={{ display: "none" }}>
+        <label className="label" htmlFor="honeypot">
+          Title
+        </label>
+        <div className="control">
+          <input
+            type="text"
+            name="honeypot"
+            style={{ display: "none" }}
+            onChange={handleChange}
+          />
+          <input type="hidden" name="subject" onChange={handleChange} />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label" htmlFor="message">
+          Message
+        </label>
+        <div className="control">
+          <textarea
+            className="textarea"
+            placeholder="Your Message"
+            name="message"
+            onChange={handleChange}
+            required
+          />
+        </div>
+      </div>
+      <div className="field is-grouped">
+        <div className="control">
+          <button className="button is-primary" type="submit">
+            Submit
+          </button>
+        </div>
+      </div>
+    </FormWrapper>
+  );
+};
+
+export { Contact };
