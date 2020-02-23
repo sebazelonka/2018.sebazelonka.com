@@ -124,7 +124,7 @@ export default class IndexPage extends React.Component {
           <img src={seba} alt="" className="img-fluid" />
         </section>
 
-        <ContactSection>
+        {/* <ContactSection>
           <Container>
             <Row className="mb-5">
               <Col className="text-center">
@@ -137,7 +137,7 @@ export default class IndexPage extends React.Component {
               </Col>
             </Row>
           </Container>
-        </ContactSection>
+        </ContactSection> */}
       </Layout>
     );
   }

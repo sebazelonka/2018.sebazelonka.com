@@ -241,7 +241,7 @@ export default class IndexPage extends React.Component {
             </Row>
           </Container>
         </Articles>
-        <ContactSection>
+        {/* <ContactSection>
           <Container>
             <Row className="mb-5">
               <Col className="text-center">
@@ -254,7 +254,7 @@ export default class IndexPage extends React.Component {
               </Col>
             </Row>
           </Container>
-        </ContactSection>
+        </ContactSection> */}
       </Layout>
     );
   }
