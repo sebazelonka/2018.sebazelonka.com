@@ -155,7 +155,7 @@ const BlogPost = ({ data }) => {
             <meta name="twitter:creator" content="@sebazelonka" />
             <meta
               property="og:url"
-              content={"https://sebazelonka.com" + `${post.fields.slug}`}
+              content={`"https://sebazelonka.com"${post.fields.slug}`}
             />
             <meta property="og:title" content={post.frontmatter.title} />
             <meta
