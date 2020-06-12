@@ -34,34 +34,6 @@ const TemplateWrapper = ({ children }) => (
                 end development.
             </title>
             <link rel="icon" type="image/png" href={favicon} />
-            <script
-                async
-                src="https://www.googletagmanager.com/gtag/js?id=UA-49715544-1"
-            />
-            <script>
-                {`window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments); }
-        gtag('js', new Date());
-      
-        gtag('config', 'UA-49715544-1');`}
-            </script>
-
-            {/* Default Statcounter code for sebazelonka.com http://sebazelonka.com */}
-            <script type="text/javascript">
-                var sc_project=12008588; var sc_invisible=1; var
-                sc_security="eb3986b8"; var sc_https=1; var sc_remove_link=1;
-            </script>
-            <script
-                type="text/javascript"
-                src="https://www.statcounter.com/counter/counter.js"
-                async
-            />
-            <noscript>
-                &lt;div class="statcounter"&gt;&lt;img class="statcounter"
-                src="https://c.statcounter.com/12008588/0/eb3986b8/1/" alt="Web
-                Analytics Made Easy - StatCounter"&gt;&lt;/div&gt;
-            </noscript>
-            {/* End of Statcounter Code */}
 
             <link
                 href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Merriweather:wght@300;400;700&display=swap"
