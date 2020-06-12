@@ -9,63 +9,69 @@ import Footer from "./Footer";
 import favicon from "../img/favicon.png";
 
 const Wrapper = styled.div`
-  font-family: "merriweather", serif;
-  font-size: 1.125rem;
-  line-height: 2rem;
+    font-family: "merriweather", serif;
+    font-size: 1.125rem;
+    line-height: 2rem;
 
-  h1,
-  h2,
-  h3 {
-    font-family: "Exo 2", sans-serif;
-    font-weight: 700;
-  }
+    h1,
+    h2,
+    h3 {
+        font-family: "Exo 2", sans-serif;
+        font-weight: 700;
+    }
 `;
 
 const MainContent = styled.div`
-  padding-top: 58px;
-  min-height: calc(100vh - 58px);
+    padding-top: 58px;
+    min-height: calc(100vh - 58px);
 `;
 
 const TemplateWrapper = ({ children }) => (
-  <Wrapper>
-    <Helmet>
-      <title>
-        Sebastian Zelonka | Where UX Design meets Front End Development
-      </title>
-      <link rel="icon" type="image/png" href={favicon} />
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-49715544-1"
-      />
-      <script>
-        {`window.dataLayer = window.dataLayer || [];
+    <Wrapper>
+        <Helmet>
+            <title>
+                Sebastian Zelonka | Bridging the gap between design and front
+                end development.
+            </title>
+            <link rel="icon" type="image/png" href={favicon} />
+            <script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=UA-49715544-1"
+            />
+            <script>
+                {`window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments); }
         gtag('js', new Date());
       
         gtag('config', 'UA-49715544-1');`}
-      </script>
+            </script>
 
-      {/* Default Statcounter code for sebazelonka.com http://sebazelonka.com */}
-      <script type="text/javascript">
-        var sc_project=12008588; var sc_invisible=1; var sc_security="eb3986b8";
-        var sc_https=1; var sc_remove_link=1;
-      </script>
-      <script
-        type="text/javascript"
-        src="https://www.statcounter.com/counter/counter.js"
-        async
-      />
-      <noscript>
-        &lt;div class="statcounter"&gt;&lt;img class="statcounter"
-        src="https://c.statcounter.com/12008588/0/eb3986b8/1/" alt="Web
-        Analytics Made Easy - StatCounter"&gt;&lt;/div&gt;
-      </noscript>
-      {/* End of Statcounter Code */}
-    </Helmet>
-    <Navbar class="fixed" />
-    <MainContent>{children}</MainContent>
-    <Footer />
-  </Wrapper>
+            {/* Default Statcounter code for sebazelonka.com http://sebazelonka.com */}
+            <script type="text/javascript">
+                var sc_project=12008588; var sc_invisible=1; var
+                sc_security="eb3986b8"; var sc_https=1; var sc_remove_link=1;
+            </script>
+            <script
+                type="text/javascript"
+                src="https://www.statcounter.com/counter/counter.js"
+                async
+            />
+            <noscript>
+                &lt;div class="statcounter"&gt;&lt;img class="statcounter"
+                src="https://c.statcounter.com/12008588/0/eb3986b8/1/" alt="Web
+                Analytics Made Easy - StatCounter"&gt;&lt;/div&gt;
+            </noscript>
+            {/* End of Statcounter Code */}
+
+            <link
+                href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Merriweather:wght@300;400;700&display=swap"
+                rel="stylesheet"
+            />
+        </Helmet>
+        <Navbar class="fixed" />
+        <MainContent>{children}</MainContent>
+        <Footer />
+    </Wrapper>
 );
 
 export default TemplateWrapper;
