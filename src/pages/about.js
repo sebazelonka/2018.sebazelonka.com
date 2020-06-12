@@ -37,6 +37,7 @@ const Quote = styled.section`
         }
     }
     .quote {
+        color: #999;
         font-family: "merriweather", serif;
         font-size: 1.5rem;
         font-weight: 300;
@@ -114,7 +115,7 @@ export default class IndexPage extends React.Component {
                     <Container>
                         <Row>
                             <Col
-                                md={{ size: 6, offset: 3 }}
+                                md={{ size: 8, offset: 3 }}
                                 className="wrapper"
                             >
                                 <p className="quote">
