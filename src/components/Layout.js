@@ -34,11 +34,10 @@ const TemplateWrapper = ({ children }) => (
                 end development.
             </title>
             <link rel="icon" type="image/png" href={favicon} />
-
-            <link
-                href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Merriweather:wght@300;400;700&display=swap"
-                rel="stylesheet"
-            />
+            <style>
+                @import
+                url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Merriweather:wght@300;400;700&display=swap');
+            </style>
         </Helmet>
         <Navbar class="fixed" />
         <MainContent>{children}</MainContent>
