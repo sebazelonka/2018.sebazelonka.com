@@ -179,18 +179,21 @@ export default class IndexPage extends React.Component {
                                 <a
                                     href="https://www.linkedin.com/in/sebastianzelonka/"
                                     target="blank"
+                                    title="LinkedIn"
                                 >
                                     <SimpleLineIcon name="social-linkedin" />
                                 </a>
                                 <a
                                     href="https://github.com/sebazelonka"
                                     target="blank"
+                                    title="Github"
                                 >
                                     <SimpleLineIcon name="social-github" />
                                 </a>
                                 <a
                                     href="https://twitter.com/sebazelonka"
                                     target="blank"
+                                    title="Twitter"
                                 >
                                     <SimpleLineIcon name="social-twitter" />
                                 </a>
