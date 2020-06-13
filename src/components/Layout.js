@@ -29,6 +29,7 @@ const MainContent = styled.div`
 const TemplateWrapper = ({ children }) => (
     <Wrapper>
         <Helmet>
+            <html lang="en" />
             <title>
                 Sebastian Zelonka | Bridging the gap between design and front
                 end development.
