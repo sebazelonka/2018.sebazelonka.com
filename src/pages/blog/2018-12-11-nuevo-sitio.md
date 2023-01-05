@@ -7,7 +7,7 @@ description: >-
   Durante los últimos meses estuve aprendiendo React y éste nuevo sitio es el
   resultado.
 tags:
-  - '"carrer advice"'
+  - carrer advice
 ---
 Aprovechando los últimos meses que estuve con más tiempo, me dediqué a aprender **React** y actualizar mi perfil "Frontender".
 
@@ -21,13 +21,13 @@ También aprendí (y no terminé de implementar aún) que existen un montón de 
 
 Sin dudas, la motivación más importante que me movió a hacer todo este cambio, fueron la curiosidad y las ganas de aprender cosas nuevas.
 
-Si bien no soy un experto desarrollador frontend, luego de más de 8 años de experiencia trabajando en la industria, siento que tengo mucho para aportar desde diversas áreas que no se limitan simplemente a lo relacionado con el mundo de la Experiencia de Usuario (UX en inglés). 
+Si bien no soy un experto desarrollador frontend, luego de más de 8 años de experiencia trabajando en la industria, siento que tengo mucho para aportar desde diversas áreas que no se limitan simplemente a lo relacionado con el mundo de la Experiencia de Usuario (UX en inglés).
 
 Parte de este aporte, sin dudas está relacionado con la posibilidad de poder hablar con los desarrolladores "de igual a igual" y este sitio es parte de mi camino hacia eso.
 
 ## Stack actual
 
-Actualmente, estoy usando lo que se conoce como [JAMstack](https://jamstack.org/). Particularmente, la base del sitio la hice usando [Netlify CMS](https://www.netlifycms.org/) y el código está en [Gitlab](https://gitlab.com/), ya que me permitía taner repos privados a costo 0. 
+Actualmente, estoy usando lo que se conoce como [JAMstack](https://jamstack.org/). Particularmente, la base del sitio la hice usando [Netlify CMS](https://www.netlifycms.org/) y el código está en [Gitlab](https://gitlab.com/), ya que me permitía taner repos privados a costo 0.
 
 Todo esto "conectado" en [Netlify](https://www.netlify.com/features/), que me resultó el servicio más simple para hacer lo que quería, incluída la posibilidad de _deployar_ desde Gitlab de una forma muy simple (cada vez que hago un PR), además de tener el dominio customizado y certificados TLS para servir mi sitio de forma segura.
 

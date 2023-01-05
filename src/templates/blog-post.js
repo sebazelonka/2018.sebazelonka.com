@@ -90,7 +90,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   date,
-  helmet
+  helmet,
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -111,7 +111,7 @@ export const BlogPostTemplate = ({
             <div class="sharethis-inline-share-buttons mt-5" />
             {tags && tags.length ? (
               <ul className="tags">
-                {tags.map(tag => (
+                {tags.map((tag) => (
                   <li key={tag + `tag`}>
                     <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                   </li>
@@ -131,7 +131,7 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   date: PropTypes.any,
   title: PropTypes.string,
-  helmet: PropTypes.object
+  helmet: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
@@ -162,13 +162,13 @@ const BlogPost = ({ data }) => {
               property="og:description"
               content={post.frontmatter.description}
             />
-            <meta
+            {/* <meta
               property="og:image"
               content={
                 "https://sebazelonka.com" +
                 `${post.frontmatter.image.childImageSharp.original.src}`
               }
-            />
+            /> */}
             <script
               type="text/javascript"
               src="//platform-api.sharethis.com/js/sharethis.js#property=5c0fe0f87b0b4500110a1c1a&product=inline-share-buttons"
@@ -185,8 +185,8 @@ const BlogPost = ({ data }) => {
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object
-  })
+    markdownRemark: PropTypes.object,
+  }),
 };
 
 export default BlogPost;

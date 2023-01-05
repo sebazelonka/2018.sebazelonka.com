@@ -143,26 +143,27 @@ export default class IndexPage extends React.Component {
         <Top>
           <div className="container">
             <h1>Sebastian Zelonka</h1>
-            <h2>Designer & Front End Developer</h2>
+            <h2>UI Developer</h2>
           </div>
         </Top>
         <About>
           <Container>
             <Row>
               <Col md={{ size: 5, offset: 4 }}>
-                <h1>Born in Argentina, working worldwide</h1>
+                <h1>Front of the frontend developer</h1>
                 <p>
-                  Hi, my name is Sebastian and I'm working from Buenos Aires,
+                  I'm Sebastian Zelonka, UI developer with an strong background
+                  on design and A11Y (accessibility), working from Buenos Aires,
                   Argentina.
                 </p>
                 <p>
-                  I have 8+ years of experience on Digital Products and I've
+                  I have 10+ years of experience on Digital Products and I've
                   worked on several projects from different industries: B2B,
                   B2C, Non Profit Orgs, Volunteer.
                 </p>
                 <p>I like starting new endeavors and challenges.</p>
                 <p>
-                  I love to discover, learn and understand problems to find the
+                  I love to discover, learn and understand problems to find
                   simpler solutions.
                 </p>
               </Col>
