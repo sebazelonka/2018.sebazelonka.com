@@ -1,28 +1,65 @@
-const userConfig = require("./gatsby-config.js.__vercel_builder_backup__.js");
-
-// https://github.com/gatsbyjs/gatsby/blob/354003fb2908e02ff12109ca3a02978a5a6e608c/packages/gatsby/src/bootstrap/prefer-default.ts
-const preferDefault = m => (m && m.default) || m;
-
-const vercelConfig = Object.assign(
-  {},
-
-  // https://github.com/gatsbyjs/gatsby/blob/a6ecfb2b01d761e8a3612b8ea132c698659923d9/packages/gatsby/src/services/initialize.ts#L113-L117
-  preferDefault(userConfig)
-);
-if (!vercelConfig.plugins) {
-  vercelConfig.plugins = [];
-}
-
-const hasPlugin = vercelConfig.plugins.find(
-  (p) =>
-    p && (p === "gatsby-plugin-vercel" || p.resolve === "gatsby-plugin-vercel")
-);
-if (!hasPlugin) {
-  vercelConfig.plugins = vercelConfig.plugins.slice();
-  vercelConfig.plugins.push({
-    resolve: "gatsby-plugin-vercel",
-    options: {},
-  });
-}
-
-module.exports = vercelConfig;
+module.exports = {
+  siteMetadata: {
+    title: "Sebastian Zelonka v2018",
+  },
+  plugins: [
+    "gatsby-plugin-vercel",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sass",
+    {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "uploads",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "pages",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/img`,
+        name: "images",
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              name: "uploads",
+            },
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2048,
+            },
+          },
+        ],
+      },
+    },
+    "gatsby-plugin-styled-components",
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Exo 2:700,900", "Merriweather:300,400,700"],
+        },
+      },
+    },
+  ],
+};
