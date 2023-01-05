@@ -5,7 +5,7 @@ date: 2023-01-05
 description: >-
   The journey to develop effective writing habits starts here
 tags:
-  - software development
+  - software
   - design systems
   - personal development
 ---
@@ -13,7 +13,7 @@ tags:
 
 This is a first step into a new journey I'm starting.
 
-One of my goals this year, is to start to share what I learn while I'm working developing components libraries.
+One of my goals this year, is to start to share what I learn while I'm working developing components libraries. At least as a reminder for myself.
 
 There are a lot of articles saying that is good to write what you learn, but [this (old)one](https://www.smashingmagazine.com/2012/03/publish-what-you-learn/) from Smashing Magazine is a good starting point.
 
