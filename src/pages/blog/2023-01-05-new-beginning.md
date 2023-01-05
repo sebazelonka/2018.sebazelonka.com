@@ -5,9 +5,9 @@ date: 2023-01-05
 description: >-
   The journey to develop effective writing habits starts here
 tags:
-  - software
-  - design systems
-  - personal development
+  - Frontend
+  - Design systems
+  - Personal development
 ---
 
 

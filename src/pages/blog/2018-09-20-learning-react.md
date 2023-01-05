@@ -7,9 +7,8 @@ description: >-
   Thoughts about why I think is a good idea to learn to code as a UX Designer
 
 tags:
-  - carrer advice
+  - Carrer advice
   - UX
-  - User Experience
 ---
 
 I always loved to understand and to “talk” the same language as developers.

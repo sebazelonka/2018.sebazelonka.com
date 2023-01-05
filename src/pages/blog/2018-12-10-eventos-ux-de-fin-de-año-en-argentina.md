@@ -7,10 +7,7 @@ description: >-
   La semana pasada asistí a dos eventos de la comunidad UX de
   Buenos Aires. Algunas reflexiones.
 tags:
-  - IDF
-  - IXDA
   - UX
-  - User Experience
 ---
 
 ## Experiencia de usuario en el diseño de productos y servicios — Salón Auditorio INTI

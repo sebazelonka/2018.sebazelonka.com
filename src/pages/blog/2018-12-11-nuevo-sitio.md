@@ -7,7 +7,8 @@ description: >-
   Durante los últimos meses estuve aprendiendo React y éste nuevo sitio es el
   resultado.
 tags:
-  - carrer advice
+  - Carrer advice
+  - Frontend
 ---
 Aprovechando los últimos meses que estuve con más tiempo, me dediqué a aprender **React** y actualizar mi perfil "Frontender".
 
