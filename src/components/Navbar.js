@@ -9,8 +9,12 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Container
+  Container,
 } from "reactstrap";
+
+const Navi = styled(Nav)`
+  margin-left: auto;
+`;
 
 const NavigationWrapper = styled(Navbar)`
   background-color: #000 !important;
@@ -35,14 +39,14 @@ const NavigationWrapper = styled(Navbar)`
       opacity: 0;
     }
   }
-  &.sticky {
+  /* &.sticky {
     position: fixed !important;
     top: 0;
     bottom: initial !important;
     .navbar-brand {
       opacity: 1;
     }
-  }
+  } */
   a {
     font-family: "exo 2", sans-serif;
     color: #fff;
@@ -61,13 +65,13 @@ export default class Navigation extends React.Component {
     super(props);
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
 
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
   render() {
@@ -76,18 +80,18 @@ export default class Navigation extends React.Component {
         expand="md"
         className={`${this.props.class} navbar-dark bg-dark`}
       >
-        <Container>
+        <Container style={{ display: "flex" }}>
           <NavbarBrand href="/">Sebastian Zelonka</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Navi className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/about/">About Me</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/articles/">Articles</NavLink>
               </NavItem>
-            </Nav>
+            </Navi>
           </Collapse>
         </Container>
       </NavigationWrapper>
