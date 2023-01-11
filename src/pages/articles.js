@@ -34,6 +34,7 @@ const Articles = styled.section`
     transition: 0.25s;
     border-bottom: 1px solid #000;
     margin-bottom: 2rem;
+    text-decoration: none;
     &:hover {
       text-decoration: none;
       background-color: #000;
@@ -85,9 +86,9 @@ export default class IndexPage extends React.Component {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array
-    })
-  })
+      edges: PropTypes.array,
+    }),
+  }),
 };
 
 export const pageQuery = graphql`

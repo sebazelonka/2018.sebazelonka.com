@@ -1,18 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 import Navbar from "../components/Navbar";
 import Footer from "./Footer";
 
 import favicon from "../img/favicon.png";
-
-const GlobalStyle = createGlobalStyle`
-  a {
-    text-decoration: none !important;
-  }
-`;
 
 const Wrapper = styled.div`
   font-family: "merriweather", serif;
@@ -42,7 +36,6 @@ const TemplateWrapper = ({ children }) => (
       </title>
       <link rel="icon" type="image/png" href={favicon} />
     </Helmet>
-    <GlobalStyle />
     <Navbar class="fixed" />
     <MainContent>{children}</MainContent>
     <Footer />

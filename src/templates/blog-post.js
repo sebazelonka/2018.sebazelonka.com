@@ -41,26 +41,11 @@ const ContentArticle = styled(Row)`
     }
   }
   a {
-    color: #16a3bc;
+    color: #1ab;
     position: relative;
     transition: 0.25s;
-    &::after {
-      position: absolute;
-      content: "";
-      height: 0;
-      width: 100%;
-      background: #16a3bc;
-      left: 0;
-      bottom: 0;
-      transition: 0.25s;
-      z-index: -1;
-    }
     &:hover {
-      color: #fff;
-      text-decoration: none;
-      &::after {
-        height: 100%;
-      }
+      color: #067;
     }
   }
 
