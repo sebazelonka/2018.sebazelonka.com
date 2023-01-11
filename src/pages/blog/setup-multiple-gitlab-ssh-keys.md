@@ -13,9 +13,11 @@ Today I was struggling to have SSH keys working on my personal gitlab account an
 
 To make it work, I've used [1Password SSH keys manager](https://developer.1password.com/docs/ssh/manage-keys/). To setup one account is pretty simple and I won't explain that.
 
-The problem arised when I mixed personal and working accounts. The way I solved the problem was creating a custom HOST for my work account on gitlab, [a similar solution proposed by 1Password for multiple accounts on Github](https://developer.1password.com/docs/ssh/agent/advanced/#use-multiple-github-accounts) .
+The problem arised when I mixed personal and working accounts. The way I solved the problem was [similar to a solution proposed by 1Password for multiple accounts on Github](https://developer.1password.com/docs/ssh/agent/advanced/#use-multiple-github-accounts):
 
-The final result looks like this:
+1. Download the public key you want to use
+2. Move the file to `~/.ssh/`
+3. Create a custom `Host` for my work account on gitlab on `~/.ssh/config`
 
 ```
 Host *
@@ -29,16 +31,20 @@ Host workgit
     IdentitiesOnly yes
 ```
 
-Basically, I'm using 1Password's IdentityAgent as a global solution and I added a new `Host` named **workgit** that's is used only on projects where the origin url has changed the host value from `gitlab.com` to `workgit`
+4. On each repo that is from work account (in my case, can be anything you need) replace the original host by the custom one. The result should look something like this:
 
-This:
+Before:
 
 ```
 git@gitlab.com:sebazelonka/ds.git
 ```
 
-Becomes this:
+After:
 
 ```
 git@workgit:sebazelonka/ds.git
 ```
+
+---
+
+Basically, I'm using 1Password's IdentityAgent as a global solution and I added a custom `Host` named **workgit** that's is used only on projects where the origin url has changed the host value from `gitlab.com` to `workgit`
