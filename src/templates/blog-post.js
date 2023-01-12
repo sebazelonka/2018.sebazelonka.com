@@ -49,6 +49,10 @@ const ContentArticle = styled(Row)`
     }
   }
 
+  h3 {
+    font-size: 1.25rem;
+  }
+
   .tags {
     margin-top: 5rem;
     padding-left: 0;
