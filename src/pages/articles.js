@@ -95,7 +95,7 @@ export const pageQuery = graphql`
   query ArticlesQuery {
     allMarkdownRemark(
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {

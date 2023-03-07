@@ -129,7 +129,7 @@ const ContactSection = styled.section`
 
 export default class IndexPage extends React.Component {
   componentDidMount() {
-    window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function () {
       var nav = document.getElementsByTagName("nav")[0];
       nav.classList.toggle("sticky", window.scrollY > window.innerHeight - 64);
     });
@@ -277,10 +277,7 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(
-      limit: 3
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
+    allMarkdownRemark(limit: 3, sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           excerpt

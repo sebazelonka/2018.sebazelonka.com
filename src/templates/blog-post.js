@@ -72,7 +72,7 @@ const ContentArticle = styled(Row)`
   }
 `;
 
-export const BlogPostTemplate = ({
+const BlogPostTemplate = ({
   content,
   contentComponent,
   description,

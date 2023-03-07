@@ -54,11 +54,23 @@ module.exports = {
     },
     "gatsby-plugin-styled-components",
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-omni-font-loader`,
       options: {
-        google: {
-          families: ["Exo 2:700,900", "Merriweather:300,400,700"],
-        },
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Exo 2`,
+            file: `https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&display=swap`,
+          },
+          {
+            name: `Merriweather`,
+            file: `https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap`,
+          },
+        ],
       },
     },
     {
