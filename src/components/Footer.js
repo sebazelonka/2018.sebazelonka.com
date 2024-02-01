@@ -33,6 +33,7 @@ export default class Footer extends React.Component {
                     href="https://www.linkedin.com/in/sebastianzelonka/"
                     target="blank"
                     title="LinkedIn"
+                    aria-label="LinkedIn"
                 >
                     <SimpleLineIcon name="social-linkedin" />
                 </a>
@@ -40,6 +41,7 @@ export default class Footer extends React.Component {
                     href="https://github.com/sebazelonka"
                     target="blank"
                     title="Github"
+                    aria-label="Github"
                 >
                     <SimpleLineIcon name="social-github" />
                 </a>
@@ -47,6 +49,7 @@ export default class Footer extends React.Component {
                     href="https://twitter.com/sebazelonka"
                     target="blank"
                     title="Twitter"
+                    aria-label="Twitter"
                 >
                     <SimpleLineIcon name="social-twitter" />
                 </a>
