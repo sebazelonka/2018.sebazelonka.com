@@ -2,11 +2,16 @@ import React from "react";
 import Helmet from "react-helmet";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
+import posthog from "posthog-js";
 
 import Navbar from "../components/Navbar";
 import Footer from "./Footer";
 
 import favicon from "../img/favicon.png";
+
+posthog.init("phc_tzNPHpAN5mNPW95ZlRvjycsX4WwVNbYAEDkzJwlTuFz", {
+  api_host: "https://us.i.posthog.com",
+});
 
 const Wrapper = styled.div`
   font-family: "merriweather", serif;

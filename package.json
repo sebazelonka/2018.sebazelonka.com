@@ -8,7 +8,7 @@
     "start": "npm run develop",
     "clean": "rimraf .cache public",
     "build": "npm run clean && gatsby build",
-    "develop": "npm run clean && gatsby develop",
+    "dev": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,6 +31,7 @@
     "gatsby-transformer-sharp": "^5.7.0",
     "lodash": "^4.17.21",
     "lodash-webpack-plugin": "^0.11.6",
+    "posthog-js": "^1.136.2",
     "prismjs": "^1.29.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
