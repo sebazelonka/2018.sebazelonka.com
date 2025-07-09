@@ -143,7 +143,7 @@ export default class IndexPage extends React.Component {
         <Top>
           <div className="container">
             <h1>Sebastian Zelonka</h1>
-            <h2>UI Developer</h2>
+            <h2>Product Engineer</h2>
           </div>
         </Top>
         <About>
